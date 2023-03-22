@@ -533,5 +533,8 @@ spec:
         selector: {{- include "common.tplvalues.render" (dict "value" .Values.readReplicas.persistence.selector "context" $) | nindent 10 }}
         {{- end -}}
         {{- include "common.storage.class" (dict "persistence" .Values.readReplicas.persistence "global" .Values.global) | nindent 8 }}
+    {{- range .Values.readReplicas.persistence.extraClaims }}
+    - {{ . | nindent 6 }}
+    {{- end }}
   {{- end }}
 {{- end }}

@@ -250,6 +250,7 @@ kubectl delete pvc -l release=my-release
 | `primary.service.headless.annotations`       | Additional custom annotations for headless PostgreSQL primary service                                                    | `{}`                  |
 | `primary.persistence.enabled`                | Enable PostgreSQL Primary data persistence using PVC                                                                     | `true`                |
 | `primary.persistence.existingClaim`          | Name of an existing PVC to use                                                                                           | `""`                  |
+| `primary.persistence.extraClaims`            | List of extra VolumeClaimTemplates.  This can be used for tablespaces                                                    | `[]`                  |
 | `primary.persistence.mountPath`              | The path the volume will be mounted at                                                                                   | `/bitnami/postgresql` |
 | `primary.persistence.subPath`                | The subdirectory of the volume to mount to                                                                               | `""`                  |
 | `primary.persistence.storageClass`           | PVC Storage Class for PostgreSQL Primary data volume                                                                     | `""`                  |
@@ -341,6 +342,7 @@ kubectl delete pvc -l release=my-release
 | `readReplicas.service.headless.annotations`       | Additional custom annotations for headless PostgreSQL read only service                                                  | `{}`                  |
 | `readReplicas.persistence.enabled`                | Enable PostgreSQL read only data persistence using PVC                                                                   | `true`                |
 | `readReplicas.persistence.existingClaim`          | Name of an existing PVC to use                                                                                           | `""`                  |
+| `readReplicas.persistence.extraClaims`            | List of extra VolumeClaimTemplates.  This can be used for tablespaces                                                    | `[]`                  |
 | `readReplicas.persistence.mountPath`              | The path the volume will be mounted at                                                                                   | `/bitnami/postgresql` |
 | `readReplicas.persistence.subPath`                | The subdirectory of the volume to mount to                                                                               | `""`                  |
 | `readReplicas.persistence.storageClass`           | PVC Storage Class for PostgreSQL read only data volume                                                                   | `""`                  |
